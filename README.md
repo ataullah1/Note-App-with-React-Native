@@ -27,13 +27,13 @@ A modern, feature-rich notepad application built with Expo and React Native, off
 1. Install project dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 2. Start the development server:
 
 ```bash
-npx expo start
+pnpm expo start
 ```
 
 You'll see options to run the app in:
@@ -59,7 +59,7 @@ You'll see options to run the app in:
 To start with a clean slate:
 
 ```bash
-npm run reset-project
+pnpm run reset-project
 ```
 
 This will move the starter code to `/app-example` and create a new `/app` directory for your development.
@@ -77,7 +77,7 @@ This will move the starter code to `/app-example` and create a new `/app` direct
 Run the test suite:
 
 ```bash
-npm test
+pnpm test
 ```
 
 ## Technologies
