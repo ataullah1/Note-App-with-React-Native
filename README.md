@@ -1,50 +1,103 @@
-# Welcome to your Expo app 👋
+# Notepad App with Native Features
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern, feature-rich notepad application built with Expo and React Native, offering a seamless note-taking experience across multiple platforms.
 
-## Get started
+## Features
 
-1. Install dependencies
+- **Rich Text Editing**: Advanced text editing capabilities using Lexical and Pell Rich Editor
+- **Native Integration**: Leverages native features for a smooth user experience
+- **Theme Support**: Dynamic theming with automatic light/dark mode switching
+- **Haptic Feedback**: Enhanced user interaction with haptic responses
+- **Cross-Platform**: Works seamlessly on iOS, Android, and Web platforms
+- **Gesture Support**: Intuitive gesture controls for better navigation
+- **Safe Storage**: Secure note storage using AsyncStorage
 
-   ```bash
-   npm install
-   ```
+## Getting Started
 
-2. Start the app
+### Prerequisites
 
-   ```bash
-    npx expo start
-   ```
+- Node.js (LTS version recommended)
+- npm or pnpm package manager
+- Expo CLI
+- iOS Simulator (for iOS development)
+- Android Studio (for Android development)
 
-In the output, you'll find options to open the app in a
+### Installation
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+1. Install project dependencies:
+
+```bash
+npm install
+```
+
+2. Start the development server:
+
+```bash
+npx expo start
+```
+
+You'll see options to run the app in:
+
+- [Development build](https://docs.expo.dev/develop/development-builds/introduction/)
 - [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- [Expo Go](https://expo.dev/go)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Project Structure
 
-## Get a fresh project
+- `/app`: Main application screens and routing
+- `/components`: Reusable UI components
+- `/constants`: Global constants and theme configurations
+- `/hooks`: Custom React hooks
+- `/types`: TypeScript type definitions
+- `/assets`: Images, fonts, and other static resources
 
-When you're ready, run:
+## Development
+
+### Starting Fresh
+
+To start with a clean slate:
 
 ```bash
 npm run reset-project
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+This will move the starter code to `/app-example` and create a new `/app` directory for your development.
 
-## Learn more
+### Key Components
 
-To learn more about developing your project with Expo, look at the following resources:
+- `NoteList`: Manages the display and organization of notes
+- `FloatingActionButton`: Quick action button for note creation
+- `ThemedView/Text`: Theme-aware components for consistent styling
+- `ParallaxScrollView`: Enhanced scrolling experience
+- `RichTextField`: Advanced text editing capabilities
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Testing
 
-## Join the community
+Run the test suite:
 
-Join our community of developers creating universal apps.
+```bash
+npm test
+```
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Technologies
+
+- [Expo](https://expo.dev/): Development framework
+- [React Native](https://reactnative.dev/): Cross-platform UI
+- [Lexical](https://lexical.dev/): Text editor framework
+- [React Navigation](https://reactnavigation.org/): Navigation library
+- [Expo Router](https://docs.expo.dev/router/introduction/): File-based routing
+
+## Learn More
+
+- [Expo Documentation](https://docs.expo.dev/)
+- [React Native Documentation](https://reactnative.dev/docs/getting-started)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the 0BSD License.
