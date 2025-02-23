@@ -1,3 +1,4 @@
+import React from "react";
 import "./styles.css";
 import { View, StyleSheet } from "react-native";
 import { TextInput } from "react-native";
@@ -13,15 +14,22 @@ export default function Editor({
   setEditorState,
   initialContent,
 }: EditorProps) {
+  const [text, setText] = React.useState(initialContent || "");
+
+  React.useEffect(() => {
+    setText(initialContent || "");
+  }, [initialContent]);
+
   return (
     <View style={styles.container}>
       <TextInput
         style={styles.editor}
         multiline
-        value={initialContent}
-        onChangeText={(text) => {
-          setPlainText(text);
-          setEditorState(text);
+        value={text}
+        onChangeText={(newText) => {
+          setText(newText);
+          setPlainText(newText);
+          setEditorState(newText);
         }}
         placeholder="Start writing your note..."
         textAlignVertical="top"

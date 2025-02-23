@@ -5,6 +5,7 @@ import { useNotes } from "@/hooks/useNotes";
 import { Note } from "@/types/Note";
 import { useState, useRef } from "react";
 import {
+  Alert,
   Animated,
   Modal,
   StyleSheet,
@@ -17,7 +18,7 @@ import { FloatingActionButton } from "@/components/FloatingActionButton";
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default function HomeScreen() {
-  const { notes, loading, addNote, updateNote } = useNotes();
+  const { notes, loading, addNote, updateNote, deleteNote } = useNotes();
   const [selectedNote, setSelectedNote] = useState<Note | null>(null);
   const [editorState, setEditorState] = useState<string | null>(null);
   const [plainText, setPlainText] = useState("");
@@ -100,8 +101,26 @@ export default function HomeScreen() {
       </View>
       <NoteList
         onDeletePress={(noteId) => {
-          // TODO: Implement delete functionality
-          console.log("Delete note:", noteId);
+          Alert.alert(
+            "Delete Note",
+            "Are you sure you want to delete this note? This action cannot be undone.",
+            [
+              {
+                text: "Cancel",
+                style: "default",
+                onPress: () => {},
+              },
+              {
+                text: "Delete",
+                style: "destructive",
+                onPress: () => deleteNote(noteId),
+              },
+            ],
+            {
+              cancelable: true,
+              userInterfaceStyle: "light",
+            }
+          );
         }}
         notes={filteredNotes}
         onNotePress={(note) => {

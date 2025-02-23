@@ -2,7 +2,7 @@ import React from "react";
 import { FlatList, StyleSheet, TouchableOpacity, View } from "react-native";
 import { ThemedText } from "./ThemedText";
 import { ThemedView } from "./ThemedView";
-import { IconSymbol } from "./ui/IconSymbol";
+import { MaterialIcons } from "@expo/vector-icons";
 import { Note } from "@/types/Note";
 
 interface NoteListProps {
@@ -22,15 +22,17 @@ export function NoteList({ notes, onNotePress, onDeletePress }: NoteListProps) {
         <ThemedText numberOfLines={2} style={styles.preview}>
           {item.content}
         </ThemedText>
-        <ThemedText style={styles.date}>
-          {new Date(item.updatedAt).toLocaleString()}
-        </ThemedText>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.deleteButton}
-        onPress={() => onDeletePress(item.id)}
-      >
-        <IconSymbol name="trash" size={20} color="#ff4444" />
+        <View style={styles.footer}>
+          <ThemedText style={styles.date}>
+            {new Date(item.updatedAt).toLocaleString()}
+          </ThemedText>
+          <TouchableOpacity
+            style={styles.deleteButton}
+            onPress={() => onDeletePress(item.id)}
+          >
+            <MaterialIcons name="delete" size={20} color="#ff4444" />
+          </TouchableOpacity>
+        </View>
       </TouchableOpacity>
     </ThemedView>
   );
@@ -55,8 +57,6 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   noteItem: {
-    flexDirection: "row",
-    alignItems: "center",
     padding: 16,
     borderRadius: 8,
     borderWidth: 1,
@@ -69,13 +69,18 @@ const styles = StyleSheet.create({
     marginTop: 4,
     opacity: 0.7,
   },
+  footer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginTop: 8,
+  },
   date: {
     fontSize: 12,
-    marginTop: 8,
     opacity: 0.5,
   },
   deleteButton: {
     marginLeft: 12,
-    padding: 8,
+    padding: 4,
   },
 });
