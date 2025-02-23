@@ -7,19 +7,20 @@
  */
 
 import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext";
-import { TreeView } from "@lexical/react/LexicalTreeView";
+import { View, StyleSheet } from "react-native";
 
 export default function TreeViewPlugin(): JSX.Element {
   const [editor] = useLexicalComposerContext();
   return (
-    <TreeView
-      viewClassName="tree-view-output"
-      treeTypeButtonClassName="debug-treetype-button"
-      timeTravelPanelClassName="debug-timetravel-panel"
-      timeTravelButtonClassName="debug-timetravel-button"
-      timeTravelPanelSliderClassName="debug-timetravel-panel-slider"
-      timeTravelPanelButtonClassName="debug-timetravel-panel-button"
-      editor={editor}
-    />
+    <View style={styles.container}>
+      {/* TreeView functionality will be implemented with React Native components */}
+    </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 10,
+  },
+});

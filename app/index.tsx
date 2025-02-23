@@ -1,6 +1,5 @@
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
-import Editor from "@/components/dom-components/rich-text-field";
 import { useNotes } from "@/hooks/useNotes";
 import { Note } from "@/types/Note";
 import { useState, useRef } from "react";
@@ -16,6 +15,7 @@ import {
 import { NoteList } from "@/components/NoteList";
 import { FloatingActionButton } from "@/components/FloatingActionButton";
 import { MaterialIcons } from "@expo/vector-icons";
+import Editor from "@/components/NoteTypeEditor";
 
 export default function HomeScreen() {
   const { notes, loading, addNote, updateNote, deleteNote } = useNotes();
